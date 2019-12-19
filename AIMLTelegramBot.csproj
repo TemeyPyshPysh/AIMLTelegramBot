@@ -52,52 +52,53 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Templates\aiml\AI.aiml" />
-    <None Include="Templates\aiml\Atomic.aiml" />
-    <None Include="Templates\aiml\Biography.aiml" />
-    <None Include="Templates\aiml\Bot.aiml" />
-    <None Include="Templates\aiml\Botmaster.aiml" />
-    <None Include="Templates\aiml\Client.aiml" />
-    <None Include="Templates\aiml\Computers.aiml" />
-    <None Include="Templates\aiml\CustomTagTest.aiml" />
-    <None Include="Templates\aiml\Default.aiml" />
-    <None Include="Templates\aiml\Emotion.aiml" />
-    <None Include="Templates\aiml\Food.aiml" />
-    <None Include="Templates\aiml\Geography.aiml" />
-    <None Include="Templates\aiml\History.aiml" />
-    <None Include="Templates\aiml\Inquiry.aiml" />
-    <None Include="Templates\aiml\Interjection.aiml" />
-    <None Include="Templates\aiml\IU.aiml" />
-    <None Include="Templates\aiml\Knowledge.aiml" />
-    <None Include="Templates\aiml\Literature.aiml" />
-    <None Include="Templates\aiml\Money.aiml" />
-    <None Include="Templates\aiml\Movies.aiml" />
-    <None Include="Templates\aiml\Music.aiml" />
-    <None Include="Templates\aiml\Personality.aiml" />
-    <None Include="Templates\aiml\Philosophy.aiml" />
-    <None Include="Templates\aiml\Pickup.aiml" />
-    <None Include="Templates\aiml\Predicates.aiml" />
-    <None Include="Templates\aiml\Reduce.aiml" />
-    <None Include="Templates\aiml\Reductions.aiml" />
-    <None Include="Templates\aiml\Salutations.aiml" />
-    <None Include="Templates\aiml\Science.aiml" />
-    <None Include="Templates\aiml\Stack.aiml" />
-    <None Include="Templates\aiml\Stories.aiml" />
-    <None Include="Templates\aiml\That.aiml" />
+    <None Include="aiml\AI.aiml" />
+    <None Include="aiml\Atomic.aiml" />
+    <None Include="aiml\Biography.aiml" />
+    <None Include="aiml\Bot.aiml" />
+    <None Include="aiml\Botmaster.aiml" />
+    <None Include="aiml\Client.aiml" />
+    <None Include="aiml\Computers.aiml" />
+    <None Include="aiml\CustomTagTest.aiml" />
+    <None Include="aiml\Default.aiml" />
+    <None Include="aiml\Emotion.aiml" />
+    <None Include="aiml\Food.aiml" />
+    <None Include="aiml\Geography.aiml" />
+    <None Include="aiml\History.aiml" />
+    <None Include="aiml\Inquiry.aiml" />
+    <None Include="aiml\Interjection.aiml" />
+    <None Include="aiml\IU.aiml" />
+    <None Include="aiml\Knowledge.aiml" />
+    <None Include="aiml\Literature.aiml" />
+    <None Include="aiml\Money.aiml" />
+    <None Include="aiml\Movies.aiml" />
+    <None Include="aiml\Music.aiml" />
+    <None Include="aiml\Personality.aiml" />
+    <None Include="aiml\Philosophy.aiml" />
+    <None Include="aiml\Pickup.aiml" />
+    <None Include="aiml\Predicates.aiml" />
+    <None Include="aiml\Reduce.aiml" />
+    <None Include="aiml\Reductions.aiml" />
+    <None Include="aiml\Salutations.aiml" />
+    <None Include="aiml\Science.aiml" />
+    <None Include="aiml\Stack.aiml" />
+    <None Include="aiml\Stories.aiml" />
+    <None Include="aiml\That.aiml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AIMLbot\AIMLbot.dll" />
-    <Content Include="Templates\config\DefaultPredicates.xml" />
-    <Content Include="Templates\config\GenderSubstitutions.xml" />
-    <Content Include="Templates\config\Person2Substitutions.xml" />
-    <Content Include="Templates\config\PersonSubstitutions.xml" />
-    <Content Include="Templates\config\Settings.xml" />
-    <Content Include="Templates\config\Splitters.xml" />
-    <Content Include="Templates\config\Substitutions.xml" />
+    <Content Include="config\DefaultPredicates.xml" />
+    <Content Include="config\GenderSubstitutions.xml" />
+    <Content Include="config\Person2Substitutions.xml" />
+    <Content Include="config\PersonSubstitutions.xml" />
+    <Content Include="config\Settings.xml" />
+    <Content Include="config\Splitters.xml" />
+    <Content Include="config\Substitutions.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>XCOPY "$(ProjectDir)\Templates\aiml" "$(TargetDir)\Templates\aiml" /E /I /F /Y /D
-XCOPY "$(ProjectDir)\Templates\config" "$(TargetDir)\Templates\config" /E /I /F /Y /D</PreBuildEvent>
+    <PreBuildEvent>XCOPY "$(ProjectDir)\aiml" "$(TargetDir)\aiml" /E /I /F /Y /D
+XCOPY "$(ProjectDir)\config" "$(TargetDir)\config" /E /I /F /Y /D</PreBuildEvent>
   </PropertyGroup>
 </Project>
