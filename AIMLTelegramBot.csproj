@@ -96,4 +96,8 @@
     <Content Include="Templates\config\Substitutions.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>XCOPY "$(ProjectDir)\Templates\aiml" "$(TargetDir)\Templates\aiml" /E /I /F /Y /D
+XCOPY "$(ProjectDir)\Templates\config" "$(TargetDir)\Templates\config" /E /I /F /Y /D</PreBuildEvent>
+  </PropertyGroup>
 </Project>
