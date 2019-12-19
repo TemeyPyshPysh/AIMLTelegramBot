@@ -16,7 +16,6 @@ namespace AIMLTelegramBot
     {
         private static ITelegramBotClient botClient;
         private static Bot AI;
-        private static User myUser;
         private static Dictionary<long, User> users;
         private static string LoadKey(string pathToFile)
         {
