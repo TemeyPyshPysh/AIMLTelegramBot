@@ -33,6 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AIMLbot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>AIMLbot\AIMLbot.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +48,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Telegram.Bot, Version=15.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Telegram.Bot.15.1.0\lib\net45\Telegram.Bot.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -48,9 +58,55 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="aiml\AI.aiml" />
+    <None Include="aiml\Atomic.aiml" />
+    <None Include="aiml\Biography.aiml" />
+    <None Include="aiml\Bot.aiml" />
+    <None Include="aiml\Botmaster.aiml" />
+    <None Include="aiml\Client.aiml" />
+    <None Include="aiml\Computers.aiml" />
+    <None Include="aiml\CustomTagTest.aiml" />
+    <None Include="aiml\Default.aiml" />
+    <None Include="aiml\Emotion.aiml" />
+    <None Include="aiml\Food.aiml" />
+    <None Include="aiml\Geography.aiml" />
+    <None Include="aiml\History.aiml" />
+    <None Include="aiml\Inquiry.aiml" />
+    <None Include="aiml\Interjection.aiml" />
+    <None Include="aiml\IU.aiml" />
+    <None Include="aiml\Knowledge.aiml" />
+    <None Include="aiml\Literature.aiml" />
+    <None Include="aiml\Money.aiml" />
+    <None Include="aiml\Movies.aiml" />
+    <None Include="aiml\Music.aiml" />
+    <None Include="aiml\Personality.aiml" />
+    <None Include="aiml\Philosophy.aiml" />
+    <None Include="aiml\Pickup.aiml" />
+    <None Include="aiml\Predicates.aiml" />
+    <None Include="aiml\Reduce.aiml" />
+    <None Include="aiml\Reductions.aiml" />
+    <None Include="aiml\Salutations.aiml" />
+    <None Include="aiml\Science.aiml" />
+    <None Include="aiml\Stack.aiml" />
+    <None Include="aiml\Stories.aiml" />
+    <None Include="aiml\That.aiml" />
+    <None Include="config\bot_key" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AIMLbot\AIMLbot.dll" />
+    <Content Include="config\DefaultPredicates.xml" />
+    <Content Include="config\GenderSubstitutions.xml" />
+    <Content Include="config\Person2Substitutions.xml" />
+    <Content Include="config\PersonSubstitutions.xml" />
+    <Content Include="config\Settings.xml" />
+    <Content Include="config\Splitters.xml" />
+    <Content Include="config\Substitutions.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>XCOPY "$(ProjectDir)\aiml" "$(TargetDir)\aiml" /E /I /F /Y /D
+XCOPY "$(ProjectDir)\config" "$(TargetDir)\config" /E /I /F /Y /D</PreBuildEvent>
+  </PropertyGroup>
 </Project>
