@@ -90,6 +90,7 @@
     <None Include="aiml\Stack.aiml" />
     <None Include="aiml\Stories.aiml" />
     <None Include="aiml\That.aiml" />
+    <None Include="config\bot_key" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

@@ -340,4 +340,4 @@ ASALocalRun/
 healthchecksdb
 
 #bot key
-bot_key
+config/bot_key
