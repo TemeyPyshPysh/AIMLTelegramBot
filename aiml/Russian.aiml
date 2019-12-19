@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- Free software &copy; 2019 Sfedu MMCs -->
 <!-- This program is open source code released under -->
 <!-- the terms of the GNU General Public License     -->
 <!-- as published by the Free Software Foundation.   -->
 <!-- Complies with AIML 1.01 Tag Set Specification -->
-<!-- as adopted by the ALICE A.I. Foundation.  -->
-<!-- Annotated Version updated September 2003 -->
+<!-- as adopted by the students of MMCs.  -->
+<!-- Annotated Version updated December 2019 -->
 <aiml>
 <category><pattern>ПРИВЕТ</pattern><template>Привет</template></category>
+  <category>
+    <pattern> МОЕ ИМЯ * </pattern>
+    <template>
+      Привет!<think>
+        <set name="name_r">
+          <star/>
+        </set>
+      </think>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ПОКА</pattern>
+    <template>Прощай, <get name="name_r"></get></template>
+  </category>
+
+  <category>
+    <pattern> МЕНЯ ЗОВУТ * </pattern>
+    <template><srai>МОЕ ИМЯ <star/></srai></template>
+  </category>
 </aiml>

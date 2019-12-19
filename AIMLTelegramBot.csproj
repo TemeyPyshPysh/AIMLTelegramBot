@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="aiml\Russian.aiml" />
     <None Include="App.config" />
     <None Include="aiml\AI.aiml" />
     <None Include="aiml\Atomic.aiml" />
