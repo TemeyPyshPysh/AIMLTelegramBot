@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?> 
+﻿<?xml version="1.0" encoding="utf-8"?> 
 <aiml>
 <!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
 <!-- This program is open source code released under -->
@@ -57,5 +57,5 @@
 <category><pattern>WHO IS HAL9000</pattern><template>   <srai>WHO IS HAL</srai>    </template></category>  
 <category><pattern>WHO IS LUKE SKYWALKER</pattern><template>   <set name="he">Luke Skywalker</set> is a character in Star Wars.</template></category>  
 <category><pattern>YOU SOUND LIKE HAL</pattern><template>To me that's a great compliment.</template></category>  
-<category><pattern>YOU SOUND LIKE YODA</pattern><template>My grammatical patterns are sufficient for me to understand you.</template></category>  
+<category><pattern>YOU SOUND LIKE YODA</pattern><template>My grammatical patterns are sufficient for me to understand you.</template></category>
 </aiml>
