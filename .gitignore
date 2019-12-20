@@ -341,3 +341,4 @@ healthchecksdb
 
 #bot key
 config/bot_key
+/aiml/bot_dialog.aiml

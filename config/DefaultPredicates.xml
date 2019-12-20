@@ -47,4 +47,5 @@
   <item name="day_time" value="день" />
   <item name="week_day" value="пятница" />
   <item name="preferred_writer" value="Стивен Кинг" />
+  <item name="music_kind" value="техно" />
 </root>
