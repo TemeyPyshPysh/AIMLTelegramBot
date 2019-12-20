@@ -48,4 +48,5 @@
   <item name="week_day" value="пятница" />
   <item name="preferred_writer" value="Стивен Кинг" />
   <item name="music_kind" value="техно" />
+  <item name="user_music_kind" value="все подряд" />
 </root>
