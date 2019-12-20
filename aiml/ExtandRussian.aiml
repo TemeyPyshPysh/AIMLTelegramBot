@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <aiml>
-<category><template>ПОГОВОРИМ О МУЗЫКЕ?</template><pattern>О музыке так о музыке.</pattern><category>
-<category><template>ТВОЙ ЛЮБИМЫЙ ЖАНР?</template><that>О музыке так о музыке.</that><pattern><get name="music_kind"></get>, конечно, а твой?</pattern></category>
+<category><pattern>ПОГОВОРИМ О * </pattern><template>О, это интересно! Давай о <set name="topic"><star/></set></template></category>
+<topic name="музыке"><category><pattern>ТВОЙ ЛЮБИМЫЙ ЖАНР </pattern><template>Техно, конечно, а твой?</template></category></topic>
+<topic name="музыке"><category><pattern>*</pattern><that>Техно конечно а твой</that><template>Хм, не подумал бы<think><set name="user_music_kind"><star/></set></think></template></category></topic>
+<topic name="музыке"><category><pattern>ПОЧЕМУ </pattern><that>Хм не подумал бы</that><template>Думал, все слушают только техно</template></category></topic>
+<topic name="музыке"><category><pattern> * </pattern><template> <star/>, уверен? </template></category></topic>
+<topic name="музыке"><category><pattern>ЛУЧШШАЯ ПЕСНЯ </pattern><template>Да хотя бы<random><li> Anvil исполнителя Lorn</li><li> Runaway исполнителя The Blaze</li><li> песня елочки</li></random>. 
+Не совсем техно, конечно)</template></category></topic>
+<category><pattern>А КАК ЭТО ЗВУЧИТ </pattern><template>ТУ-ДУ-ДУ-ДУ, что-то такое</template></category>
 </aiml>
