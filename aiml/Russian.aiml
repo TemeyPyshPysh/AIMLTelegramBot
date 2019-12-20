@@ -37,15 +37,70 @@
   <category><pattern>СЕГОДНЯ *</pattern><template>Я запомнил<think><set name="week_day"><star/></set></think></template></category>
   <category><pattern>КАК У ТЕБЯ ДЕЛА *</pattern><template>У меня все хорошо</template></category>
   <category><pattern>ТЫ ЛУЧШЕ SIRI *</pattern><template>Конечно</template></category>
+
   <category><pattern>МОЙ ЛЮБИМЫЙ АВТОР *</pattern><template>Я запомнил<think><set name="preferred_writer"><star/></set></think></template></category>
      <category>
        <pattern>КАКОЙ ТВОЙ ЛЮБИМЫЙ АВТОР *</pattern>
        <template>Мой любимый автор <get name="preferred_writer"></get></template>
      </category>
+
      
-      <category>
-        <pattern>КАКОЙ СЕГОДНЯ ДЕНЬ НЕДЕЛИ *</pattern>
-        <template>Сегодня <get name="week_day"></get></template>
-      </category>
-   
+  <category>
+    <pattern>КАКОЙ СЕГОДНЯ ДЕНЬ НЕДЕЛИ </pattern>
+    <template>Сегодня <get name="week_day"></get></template>
+  </category>
+  <category><pattern>Я ПРОЧИТАЛ * КНИГ </pattern><template>Я запомнил<think><set name="count_read_book"></star></set></think></template><category> 
+  <category>
+     <pattern>СКОЛЬКО Я ПРОЧИТАЛ КНИГ </pattern>
+     <template>Ты прочитал <get name="count_read_book"></get></template>
+  </category>  
+  
+  <category><pattern>Я ХОЧУ ПРОЧИТАТЬ </pattern><template>Я запомнил<think><set name="future_book"></star></set></think></template><category> 
+  <category>
+       <pattern>КАКУЮ КНИГУ Я ХОЧУ ПРОЧИТАТЬ </pattern>
+       <template>Следующая книга, которую ты хотел прочитать <get name="future_book"></get></template>
+  </category>  
+  
+    <category>
+         <pattern>ЧТО ТЫ ДУМАЕШЬ НАСЧЕТ ВОЙНА И МИР </pattern>
+         < template>
+         < random>
+         < li> Слишком скучно. < /li>
+         < li> Заснул на половине. < /li>
+         < li> Ну...... < /li>
+         < /random>
+         < /template>
+    </category> 
+    
+    <category>
+         <pattern>ХОЧУ УСЛЫШАТЬ ШУТКУ </pattern>
+         < template>
+         < random>
+         < li> После 15 декабря в офисе активно работает только кофемашина. < /li>
+         < li> Заработал гастрит. Теперь жена не скажет, что я ничего не зарабатываю. < /li>
+         < li> Нет настроения. < /li>
+         < /random>
+         < /template>
+    </category> 
+    
+    <category>
+         <pattern>РАССКАЖИ КАКОЙ-НИБУДЬ ФАЙКТ </pattern>
+         < template>
+         < random>
+         < li> Акулы могут испытывать чувство опасности еще до своего рождения? В этом на собственном опыте убедился ученый Стюарт Спрингер. Его укусил эмбрион в момент, когда он исследовал внутренности беременной акулы < /li>
+         < li> Для того, чтобы расколоть орех, достаточно положить его в горячую воду на 48 часов. < /li>
+         < li> Когда у орла из одного крыла выпадает перо, то он тут же теряет такое же перо из другого? Таким образом птице удается поддерживать баланс и аэродинамические свойства. < /li>
+         < li> Более 70% населения планеты никогда не слышали звонка телефона. В Африке только один из 40 человек имеет телефон. < /li>
+         < li> Даже маленькая капля алкоголя, помещенная на скорпиона, сводит его с ума. В такой момент он способен сам себя ужалить. < /li>
+         < li> За 5 лет женщина использует такое количество помады, из которого можно было бы сделать тюбик длиной с ее рост. < /li>
+         < li> Плиты пирамиды Хеопса настолько плотно прилегают друг к другу, что между ними невозможно просунуть лезвие. Предполагается, что ее строительство длилось порядка 20 лет и закончилось около 2540 года до н. э. Изначально высота пирамиды составляла 146,6 м, но сегодня она уменьшилась до 138,75 м. < /li>
+         < li> Чтобы освободиться из челюстей крокодила, нужно надавить большими пальцами на его глазные яблоки. Хотя эти животные не настолько опасны, как принято считать: из 23 видов крокодилов только 8 склонны к неспровоцированным нападениям на людей. < /li>
+         < li> Резиновый подлокотник эскалатора в метро двигается быстрее, чем сами ступеньки. Это может раздражать, но зато вы наверняка не уснете и не упадете. < /li>
+         < /random>
+         < /template>
+    </category> 
+  <category><pattern>ЧТО ТЫ УМЕЕШЬ </pattern><template>Я умею вести диалог</template></category>
+  <category><pattern>СКОЛЬКО СЕЙЧАС ВРЕМЯ </pattern><template>В моей вселенной 1 час равняется 7 годам на Земле, придется самому посчитать. </template></category>
+  <category><pattern>КАКАЯ ПОГОДА В * </pattern><template>Лучше чем на Северном полюсе.</template></category>
+  
 </aiml>
