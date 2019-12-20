@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aiml>
+<category><template>ПОГОВОРИМ О МУЗЫКЕ?</template><pattern>О музыке так о музыке.</pattern><category>
+<category><template>ТВОЙ ЛЮБИМЫЙ ЖАНР?</template><that>О музыке так о музыке.</that><pattern><get name="music_kind"></get>, конечно, а твой?</pattern></category>
+</aiml>
