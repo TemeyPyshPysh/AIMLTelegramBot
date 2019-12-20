@@ -100,5 +100,19 @@
   <category><pattern>ЧТО ТЫ УМЕЕШЬ </pattern><template>Я умею вести диалог</template></category>
   <category><pattern>СКОЛЬКО СЕЙЧАС ВРЕМЯ </pattern><template>В моей вселенной 1 час равняется 7 годам на Земле, придется самому посчитать. </template></category>
   <category><pattern>КАКАЯ ПОГОДА В * </pattern><template>Лучше чем на Северном полюсе.</template></category>
-  
+  <category>
+        <pattern> ТЫ ПРЕДПОЧИТАЕШЬ СТИВЕНА КИНГА </pattern>
+        
+        <template>
+           <think><set name = "preferred_writer"> Стивен Кинг</set></think>
+           <condition name = "preferred_writer" value = "Стивен Кинг">
+              Да, я предпочитаю Стивена Кинга
+           </condition>
+           
+           <condition name = "preferred_writer" value = "Достаевский">
+              Нет, я предпочитаю Достаевского
+           </condition>
+        </template>
+        
+     </category>
 </aiml>
