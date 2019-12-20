@@ -28,4 +28,10 @@
     <pattern> МЕНЯ ЗОВУТ * </pattern>
     <template><srai>МОЕ ИМЯ <star/></srai></template>
   </category>
+  
+  <category><pattern>ПРОЩАЙ</pattern><template><srai>ПОКА</srai></template></category>
+  <category><pattern>ДО СВИДАНИЯ</pattern><template><srai>ПОКА</srai></template></category>
+  <category><pattern>БАЙ</pattern><template><srai>ПОКА</srai></template></category>
+  <category><pattern>ХАЛО</pattern><template><srai>ПРИВЕТ</srai></template></category>
+  <category><pattern>ДОБРОЕ УТРО</pattern><template>ПРИВЕТСТВУЮ<think><set name=""></think></template></category>
 </aiml>
