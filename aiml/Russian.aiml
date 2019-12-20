@@ -34,4 +34,18 @@
   <category><pattern>БАЙ</pattern><template><srai>ПОКА</srai></template></category>
   <category><pattern>ХАЛО</pattern><template><srai>ПРИВЕТ</srai></template></category>
   <category><pattern>ДОБРОЕ УТРО</pattern><template>ПРИВЕТСТВУЮ<think><set name=""></think></template></category>
+  <category><pattern>СЕГОДНЯ *</pattern><template>Я запомнил<think><set name="week_day"></star></set></think></template><category>
+  <category><pattern>КАК У ТЕБЯ ДЕЛА *</pattern><template>У меня все хорошо</template></category>
+  <category><pattern>ТЫ ЛУЧШЕ SIRI *</pattern><template>Конечно</template></category>
+  <category><pattern>МОЙ ЛЮБИМЫЙ АВТОР *</pattern><template>Я запомнил<think><set name="preferred_writer"></star></set></think></template><category>
+     <category>
+       <pattern>КАКОЙ ТВОЙ ЛЮБИМЫЙ АВТОР *</pattern>
+       <template>Мой любимый автор <get name="preferred_writer"></get></template>
+     </category>
+     
+      <category>
+        <pattern>КАКОЙ СЕГОДНЯ ДЕНЬ НЕДЕЛИ *</pattern>
+        <template>Сегодня <get name="week_day"></get></template>
+      </category>
+   
 </aiml>

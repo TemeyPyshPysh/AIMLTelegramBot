@@ -45,4 +45,6 @@
   <item name="we" value="unknown" />
   <item name="name_r" value="Неизвестный" />
   <item name="day_time" value="день" />
+  <item name="week_day" value="пятница" />
+  <item name="preferred_writer" value="Стивен Кинг" />
 </root>
