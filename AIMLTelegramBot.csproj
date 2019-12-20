@@ -96,7 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AIMLbot\AIMLbot.dll" />
-    <Content Include="aiml\bot_dialog.aiml" />
     <Content Include="aiml\ExtandRussian.aiml" />
     <Content Include="config\DefaultPredicates.xml" />
     <Content Include="config\GenderSubstitutions.xml" />
