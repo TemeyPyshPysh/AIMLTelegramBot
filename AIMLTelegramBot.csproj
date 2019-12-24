@@ -57,7 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="aiml\Russian.aiml" />
+    <None Include="aiml\RussianLocalization\Russian.aiml" />
     <None Include="App.config" />
     <None Include="aiml\AI.aiml" />
     <None Include="aiml\Atomic.aiml" />
@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AIMLbot\AIMLbot.dll" />
-    <Content Include="aiml\ExtandRussian.aiml" />
+    <Content Include="aiml\RussianLocalization\ExtandRussian.aiml" />
     <Content Include="config\DefaultPredicates.xml" />
     <Content Include="config\GenderSubstitutions.xml" />
     <Content Include="config\Person2Substitutions.xml" />

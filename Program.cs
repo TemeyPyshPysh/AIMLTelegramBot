@@ -17,6 +17,7 @@ namespace AIMLTelegramBot
         private static ITelegramBotClient botClient;
         private static Bot AI;
         private static Dictionary<long, User> users;
+        private static Random dice;
         private static string LoadKey(string pathToFile)
         {
             StreamReader sr = new StreamReader(pathToFile);
@@ -44,11 +45,29 @@ namespace AIMLTelegramBot
                 Request r = new Request(e.Message.Text, currentUser, AI);
                 Result res = AI.Chat(r);
 
-                Console.WriteLine("Robot: " + res.Output);
-                await botClient.SendTextMessageAsync(
+                string robot_answer = res.Output;
+                Console.WriteLine("Robot: " + robot_answer);
+                Thread.Sleep(dice.Next(10, 956));
+                if (robot_answer == "Я..")
+                {
+                    await botClient.SendTextMessageAsync(
                     chatId: e.Message.Chat,
-                    text: "Robot:\n" + res.Output
+                    text: "Robot:\n" + "Я.."
+                    );
+                    robot_answer = "Я не знаю.";
+                    Thread.Sleep(1000);
+                    await botClient.SendTextMessageAsync(
+                    chatId: e.Message.Chat,
+                    text: robot_answer
                 );
+                }
+                else
+                {                    
+                    await botClient.SendTextMessageAsync(
+                        chatId: e.Message.Chat,
+                        text: "Robot:\n" + robot_answer
+                    );
+            }
             }
         }
         static void Main(string[] args)
@@ -61,10 +80,12 @@ namespace AIMLTelegramBot
             string pathToFile = "config/bot_key";
             string accessToken = LoadKey(pathToFile);
 
-            var proxy = new WebProxy("20.40.147.38:8080");
+            var proxy = new WebProxy("51.158.111.229:8811");
 
             botClient = new TelegramBotClient(accessToken, proxy);
             var me = botClient.GetMeAsync().Result;
+
+            dice = new Random();
 
             Console.WriteLine(
                 $"I'M ALIVE 4AW3 1S {me.Id} :: {me.FirstName}"
