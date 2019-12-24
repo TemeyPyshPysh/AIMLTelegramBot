@@ -80,7 +80,7 @@ namespace AIMLTelegramBot
             string pathToFile = "config/bot_key";
             string accessToken = LoadKey(pathToFile);
 
-            var proxy = new WebProxy("51.158.111.229:8811");
+            var proxy = new WebProxy("103.11.65.160:80"); // 51.158.111.229:8811 
 
             botClient = new TelegramBotClient(accessToken, proxy);
             var me = botClient.GetMeAsync().Result;

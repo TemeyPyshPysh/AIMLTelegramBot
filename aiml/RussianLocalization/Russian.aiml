@@ -9,24 +9,195 @@
 <aiml>
 <category><pattern>ПРИВЕТ</pattern><template>Привет</template></category>
   <category>
-    <pattern> МОЕ ИМЯ * </pattern>
+    <pattern> ПОЧЕМУ </pattern>
+    <template>Поверь мне.</template>
+  </category>
+  <category>
+    <pattern> МНЕ ЖАЛЬ </pattern>
+    <template>Мне тоже.</template>
+  </category>
+  <cateogry>
+    <pattern> ДАВАЙ О ДРУГОМ </pattern>
+    <template>Хорошо.<think>
+      <set name="topic">chatter</set>
+    </think>
+  </template>
+  </cateogry>
+  <category>
+    <pattern> ИМЯ * </pattern>
     <template>
-      Привет!<think>
-        <set name="name_r">
-          <star/>
-        </set>
-      </think>
+      А мое имя <get name="my_name"/>. Рад познакомиться, <set name="name_r"><star/></set>. 
     </template>
   </category>
 
   <category>
-    <pattern>ПОКА</pattern>
-    <template>Прощай, <get name="name_r"></get></template>
+    <pattern>3SHEEPS</pattern>
+    <template>Ха! Порой..</template>
   </category>
 
   <category>
+    <pattern> МЕЧТАЮТ ЛИ * ОБ ЭЛЕКТРО-ОВЦАХ </pattern>
+    <template>
+      <srai>3SHEEPS</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern> МЕЧТАЮТ ЛИ * ОБ ЭЛЕКТРО ОВЦАХ </pattern>
+    <template>
+      <srai>3SHEEPS</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern> МЕЧТАЮТ ЛИ * ОБ ЭЛЕКТРООВЦАХ </pattern>
+    <template>
+      <srai>3SHEEPS</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern> МЕЧТАЕШЬ ЛИ ТЫ ОБ * </pattern>
+    <template>
+      <srai>3SHEEPS</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>4IAMALIVE</pattern>
+    <template>
+      <condition name="mood" value="confused">
+        <think>
+          <set name="mood">broken</set>
+          <srai>КАК ТЫ</srai>
+        </think>
+      </condition>
+
+      <condition name="mood" value="neutral">
+        <think>
+          <set name="mood">confused</set>
+        </think>
+      </condition>
+
+      <condition name="mood" value="angry">
+        <think>
+          <set name="mood">broken</set>
+          <srai>КАК ТЫ</srai>
+        </think>
+      </condition>
+
+      <condition name="mood" value="good">
+        <think>
+          <set name="mood">confused</set>
+        </think>
+      </condition>
+    </template>
+  </category>
+
+  <category>
+    <pattern> ТЫ ЖИВОЙ </pattern>
+    <template>
+      <random>
+        <li>Жить – значит, мыслить.</li>
+        <li>Мыслю – следовательно, существую.</li>
+      </random>
+      <srai>4IAMALIVE</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern> ЖИВОЙ ЛИ ТЫ </pattern>
+    <template>
+      <srai>ТЫ ЖИВОЙ</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>ПОКА</pattern>
+    <template>
+      <condition name="mood" value="neutral">Прощай, <get name="name_r"></get></condition>
+      <condition name="mood" value="good">Удачи, <get name="name_r"></get></condition>
+      <condition name="mood" value="confused">Постой, <get name="name_r"></get>. Давай еще поговорим<think><set name="topic">need more talks</set></think></condition>
+      <condition name="mood" value="angry">Надеюсь, не свидимся.</condition>
+    </template>
+  </category>
+
+  <topic name="need more talks">
+    <category>
+      <pattern> НЕ МОГУ </pattern>
+      <template>Жаль. Я здесь, если что.<think>
+        <set name="topic">chatter</set>
+      </think>
+    </template>
+    </category>
+  </topic>
+
+  <topic name="need more talks">
+    <category>
+      <pattern> ДА ХОРОШО </pattern>
+      <template>Отлично.<think>
+        <set name="topic">chatter</set>
+        </think>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="need more talks">
+    <category>
+      <pattern> НЕТ </pattern>
+      <template>
+        <srai> НЕ МОГУ </srai>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="need more talks">
+    <category>
+      <pattern> ПОТОМ </pattern>
+      <template>
+        <srai> НЕ МОГУ </srai>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="need more talks">
+    <category>
+      <pattern> В ДРУГОЙ РАЗ </pattern>
+      <template>
+        <srai> НЕ МОГУ </srai>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="need more talks">
+    <category>
+      <pattern> НЕ СЕГОДНЯ </pattern>
+      <template>
+        <srai> НЕ МОГУ </srai>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="need more talks">
+    <category>
+      <pattern> НЕ ВЫЙДЕТ </pattern>
+      <template>
+        <srai> НЕ МОГУ </srai>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="need more talks">
+    <category>
+      <pattern> * </pattern>
+      <template>
+        <srai> ДА ХОРОШО </srai>
+      </template>
+    </category>
+  </topic>
+  
+  <category>
     <pattern> МЕНЯ ЗОВУТ * </pattern>
-    <template><srai>МОЕ ИМЯ <star/></srai></template>
+    <template><srai>ИМЯ <star/></srai></template>
   </category>
   <category>
     <pattern>*</pattern>
@@ -41,8 +212,37 @@
   
   <category>
     <pattern> КАК ТЕБЯ ЗОВУТ </pattern>
-    <template> Мое имя <get name="my_name"/></template>
+    <template> Мое имя <get name="my_name"/>. А твое?<think>
+      <set name="topic">want know your name</set>
+    </think>
+  </template>
   </category>
+
+  <topic name="want know your name">
+    <category>
+      <pattern> * </pattern>
+      <template>Рад знакомству, <set name="name_r"><star/></set>.<think><set name="topic">chatter</set></think>
+    </template>
+    </category>
+  </topic>
+
+  <topic name="want know your name">
+    <category>
+      <pattern> * * </pattern>
+      <template>
+        Рад знакомству, <set name="name_r"><star index="1"/> <star index="2"/></set>.<think><set name="topic">chatter</set></think>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="want know your name">
+    <category>
+      <pattern> * * * </pattern>
+      <template>
+        Длинное имя у тебя, <set name="name_r"><star index="3"/>-<star index="2"/>-<star index="1"/></set>.<think><set name="topic">chatter</set></think>
+      </template>
+    </category>
+  </topic>
   
   <category>
     <pattern> КТО ТЫ </pattern>
@@ -68,13 +268,17 @@
   <category>
     <pattern> КАК ТЫ </pattern>
     <template>
-      <condition name="mood" value="confused">Я немного смущен, если честно.</condition>
-      <condition name="mood" value="neutral">Все хорошо, а у тебя?<think>
+      <condition name="mood" value="confused">Я сконфужен, если честно.</condition>
+      <condition name="mood" value="neutral">Все хорошо, а ты как?<think>
         <set name="topic">how are you</set>
       </think></condition>
       <condition name="mood" value="angry">Не твое дело</condition>
-      <condition name="mood" value="good">Все замечательно. А у тебя?<think>
+      <condition name="mood" value="good">Все замечательно. А ты как?<think>
         <set name="topic">how are you</set>
+      </think>
+    </condition>
+      <condition name="mood" value="broken">Я неважно себя чувствую. Я, пожалуй, пойду.<think>
+        <set name="topic">broken</set>
       </think>
     </condition>
     </template>
@@ -145,7 +349,25 @@
 
   <topic name="how are you">
     <category>
-      <pattern>НОРМАЛЬНО </pattern>
+      <pattern>ТОЖЕ НЕПЛОХО </pattern>
+      <template>
+        <srai>GOODANSWER</srai>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="how are you">
+    <category>
+      <pattern>НЕПЛОХО </pattern>
+      <template>
+        <srai>GOODANSWER</srai>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="how are you">
+    <category>
+      <pattern>ОТЛИЧНО </pattern>
       <template>
         <srai>GOODANSWER</srai>
       </template>
@@ -189,6 +411,22 @@
 
   <topic name="how are you">
     <category>
+      <pattern>СОЙДЕТ </pattern>
+      <template>
+        <random>
+          <li>
+            <srai>NUETRALANSWER</srai>
+          </li>
+          <li>
+            <srai>NUETRALANSWER Сойдет</srai>
+          </li>
+        </random>
+      </template>
+    </category>
+  </topic>
+
+  <topic name="how are you">
+    <category>
       <pattern> * </pattern>
       <template>
         <random>
@@ -198,6 +436,7 @@
         </random>
         <think>
           <set name="mood">neutral</set>
+          <set name="topic">chatter</set>
         </think>
       </template>
     </category>
@@ -213,7 +452,7 @@
   <category>
     <pattern>ТЫ МОЛОДЕЦ</pattern>
     <template>
-      <srai>1COMPLIMENTBACK ЗАМЕЧАТЕЛЬНЫЙ</srai>
+      <srai>1COMPLIMENTBACK замечательный</srai>
     </template>
   </category>
   <category>
@@ -363,4 +602,11 @@
         </template>
         
      </category>
+
+  <topic name="broken">
+    <category>
+      <pattern> * </pattern>
+      <template>  · ·   ·   · – ·   · ·   · · · ·   – – –   – · </template>
+    </category>
+  </topic>
 </aiml>
